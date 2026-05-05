@@ -1,36 +1,33 @@
-import { test, expect } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
-
+import { test, expect } from '../fixtures/base';
 
 test.describe('Login Page Tests', () => { 
-  let loginPage: LoginPage;
   
-  test.beforeEach(async ({ page }) => {
-    loginPage = new LoginPage(page);
+  test.beforeEach(async ( {loginPage} ) => {
     await loginPage.goto();
   });
 
-  test('TestCase1: Successful Login with admin credentials', async () => {
+  test('TestCase1: Successful Login with admin credentials', async ({loginPage}) => {
     await loginPage.logInWithUserNamePassword('admin', 'admin123');
     // Add assertions to verify successful login, e.g., check for a specific element on the dashboard
-    await loginPage.verifySuccessfulLogin();
+    await expect(loginPage.dashBoardButton).toBeVisible();
   });
 
-  test('TestCase2: Unsuccessful Login with invalid credentials', async () => {
+  test('TestCase2: Unsuccessful Login with invalid credentials', async ({loginPage}) => {
     await loginPage.logInWithUserNamePassword('invalidUser', 'invalidPass');
     // Add assertions to verify the error message is displayed
-    await loginPage.verifyInvalidLoginErrorMessage();
+    await loginPage.invalidLoginErrorMessage.isVisible();
   });
 
-  test('TestCase3: Toggle Password Visibility', async () => {
+  test('TestCase3: Toggle Password Visibility', async ({loginPage}) => {
     let password = "somePassword";
     await loginPage.enterPassword(password);
     await loginPage.togglePasswordVisibility();
     // Add assertions to verify that the password input type has changed to text
-    await loginPage.verifytogglePasswordVisibility(password);
+     const passwordInputType = await loginPage.passwordInput.inputValue();
+    expect(passwordInputType).toBe(password);
   });
 
-  test('TestCase4: Clear Input Fields', async () => {
+  test('TestCase4: Clear Input Fields', async ({loginPage}) => {
     await loginPage.usernameInput.fill('someUser');
     await loginPage.passwordInput.fill('somePass');
     await loginPage.clearInputFields();
@@ -41,11 +38,11 @@ test.describe('Login Page Tests', () => {
     expect(passwordValue).toBe('');
   });
 
-  test('TestCase5: Required Field Validation', async () => {
+  test('TestCase5: Required Field Validation', async ({loginPage}) => {
     await loginPage.logInWithUserNamePassword('', '');
     // Add assertions to verify that the required field error messages are displayed
-    await loginPage.verifyUsernameRequiredErrorMessage();
-    await loginPage.verifyPasswordRequiredErrorMessage();
+    await expect(loginPage.usernameReuiredErrorMessage).toBeVisible();
+    await expect(loginPage.passwordReuiredErrorMessage).toBeVisible();
   }); 
 
 });

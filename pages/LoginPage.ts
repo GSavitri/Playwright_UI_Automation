@@ -1,7 +1,6 @@
-import { expect, type Locator, type Page } from '@playwright/test';
+import { type Locator, type Page } from '@playwright/test';
 
 export class LoginPage {
-  page: Page;
   usernameInput : Locator   ;
   passwordInput : Locator;
   loginButton : Locator;
@@ -13,7 +12,7 @@ export class LoginPage {
   passwordReuiredErrorMessage : Locator;
 
 
-  constructor(page: Page) {
+  constructor(public readonly page: Page) {
     this.page = page;
     this.usernameInput = page.getByTestId('username-input');
     this.passwordInput = page.getByTestId('password-input');
@@ -44,32 +43,13 @@ export class LoginPage {
     await this.loginButton.click();
   }
 
-  async verifySuccessfulLogin() {
-    await expect(this.dashBoardButton).toBeVisible();
-  }
-
-  async verifyInvalidLoginErrorMessage() {
-    await expect(this.invalidLoginErrorMessage).toBeVisible();
-  }
-
   async togglePasswordVisibility() {
     await this.showPasswordButton.click();
   }
 
-  async verifytogglePasswordVisibility(password: string) {
-    const passwordInputType = await this.passwordInput.inputValue();
-    expect(passwordInputType).toBe(password);
-  }
 
   async clearInputFields() {
     await this.clearButton.click();
   }
 
-    async verifyUsernameRequiredErrorMessage() {
-        await expect(this.usernameReuiredErrorMessage).toBeVisible();
-    }
-
-    async verifyPasswordRequiredErrorMessage() {
-        await expect(this.passwordReuiredErrorMessage).toBeVisible();
-    }
 }
