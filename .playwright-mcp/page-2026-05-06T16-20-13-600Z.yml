@@ -1,0 +1,231 @@
+- generic:
+  - link:
+    - /url: "#main-content"
+    - text: Skip to content
+  - main:
+    - generic:
+      - generic:
+        - navigation:
+          - generic:
+            - generic:
+              - generic:
+                - img
+                - generic: SecureBank
+              - list:
+                - listitem:
+                  - link:
+                    - /url: /bank/dashboard
+                    - text: 📊 Dashboard
+                - listitem:
+                  - link:
+                    - /url: /bank/accounts
+                    - text: 💳 Accounts
+                - listitem:
+                  - link:
+                    - /url: /bank/transactions
+                    - text: 💸 Transactions
+              - generic:
+                - link:
+                  - /url: /docs/bank-demo
+                  - text: Help & Docs
+                - generic: 👤 admin
+                - button: Logout
+        - main:
+          - generic:
+            - generic:
+              - generic: Total Balance
+              - generic: $7,500.00
+            - generic:
+              - generic: Total Accounts
+              - generic: "2"
+            - generic:
+              - generic: Active
+              - generic: "2"
+            - generic:
+              - generic: Showing (filtered)
+              - generic: "2"
+          - generic:
+            - generic:
+              - generic:
+                - text: "Search:"
+                - generic:
+                  - img
+                  - textbox:
+                    - /placeholder: Search by name or number
+              - generic:
+                - text: "Account Type:"
+                - combobox:
+                  - generic: All Types
+                  - img
+              - generic:
+                - text: "Sort By:"
+                - combobox:
+                  - generic: Account Name
+                  - img
+              - generic:
+                - button: Reset Filters
+          - generic:
+            - generic:
+              - heading [level=2]: Your Bank Accounts
+            - generic:
+              - generic:
+                - table:
+                  - rowgroup:
+                    - row:
+                      - columnheader: Account Number
+                      - columnheader:
+                        - text: Account Name
+                        - img
+                      - columnheader: Type
+                      - columnheader:
+                        - text: Balance
+                        - img
+                      - columnheader:
+                        - text: Status
+                        - img
+                      - columnheader: Actions
+                  - rowgroup:
+                    - row:
+                      - cell: "1001234568"
+                      - cell:
+                        - link:
+                          - /url: /bank/accounts/id_1778084403570_ep94en1qr
+                          - text: Checking Account
+                      - cell:
+                        - generic: Checking
+                      - cell: $2,500.00
+                      - cell:
+                        - generic: Active
+                      - cell:
+                        - generic:
+                          - button:
+                            - img
+                            - text: Edit
+                          - button:
+                            - img
+                            - text: Delete
+                    - row:
+                      - cell: "1001234567"
+                      - cell:
+                        - link:
+                          - /url: /bank/accounts/id_1778084403570_65f2ehjei
+                          - text: Primary Savings
+                      - cell:
+                        - generic: Savings
+                      - cell: $5,000.00
+                      - cell:
+                        - generic: Active
+                      - cell:
+                        - generic:
+                          - button:
+                            - img
+                            - text: Edit
+                          - button:
+                            - img
+                            - text: Delete
+              - generic:
+                - generic: Showing 1–2 of 2
+                - generic:
+                  - button [disabled]:
+                    - img
+                  - button [disabled]:
+                    - img
+                  - button: "1"
+                  - button [disabled]:
+                    - img
+                  - button [disabled]:
+                    - img
+                - generic:
+                  - generic: Rows per page
+                  - combobox:
+                    - generic: "10"
+                    - img
+          - generic:
+            - generic:
+              - img
+              - heading [level=2]: Accounts Page — Test Cases
+            - paragraph:
+              - text: Expand each test case to see step-by-step automation instructions for Selenium and Playwright. Looking for more inspiration? Read our
+              - link:
+                - /url: /blog/25-real-world-automation-test-cases-for-qa-engineers
+                - text: guide on 25 real-world automation test cases
+              - text: .
+            - generic:
+              - generic:
+                - heading [level=3]:
+                  - button:
+                    - generic:
+                      - generic: "TC-ACC-01:"
+                      - text: Create a new account using the 3-step Open Account wizard
+                    - img
+              - generic:
+                - heading [level=3]:
+                  - button:
+                    - generic:
+                      - generic: "TC-ACC-02:"
+                      - text: Edit account name inline by double-clicking the name cell
+                    - img
+              - generic:
+                - heading [level=3]:
+                  - button:
+                    - generic:
+                      - generic: "TC-ACC-03:"
+                      - text: Delete an account with confirmation and verify it is removed
+                    - img
+              - generic:
+                - heading [level=3]:
+                  - button:
+                    - generic:
+                      - generic: "TC-ACC-04:"
+                      - text: Filter accounts by account type
+                    - img
+              - generic:
+                - heading [level=3]:
+                  - button:
+                    - generic:
+                      - generic: "TC-ACC-05:"
+                      - text: Sort accounts by Balance column header (ascending → descending → none)
+                    - img
+  - region "Notifications alt+T"
+  - alert: Manage Accounts – Bank Demo E2E Practice | QA Playground
+  - dialog "Add New Account" [ref=e133]:
+    - generic [ref=e134]:
+      - heading "Add New Account" [level=2] [ref=e135]
+      - paragraph [ref=e136]: Fill in the details to create a new account.
+    - generic [ref=e137]:
+      - generic [ref=e138]:
+        - generic [ref=e139]:
+          - text: Account Name *
+          - textbox "Account Name *" [active] [ref=e140]:
+            - /placeholder: e.g., My Savings Account
+        - generic [ref=e141]:
+          - text: Account Type *
+          - combobox "Account Type *" [ref=e142] [cursor=pointer]:
+            - generic: Select account type
+            - img [ref=e143]
+          - combobox [ref=e145]
+        - generic [ref=e146]:
+          - text: Initial Balance *
+          - spinbutton "Initial Balance *" [ref=e147]
+        - generic [ref=e148]:
+          - text: Status
+          - radiogroup [ref=e149]:
+            - generic [ref=e150]:
+              - radio "Active" [checked] [ref=e151] [cursor=pointer]:
+                - img [ref=e153]
+              - radio [checked]
+              - generic [ref=e155] [cursor=pointer]: Active
+            - generic [ref=e156]:
+              - radio "Inactive" [ref=e157] [cursor=pointer]
+              - radio
+              - generic [ref=e158] [cursor=pointer]: Inactive
+        - generic [ref=e159]:
+          - checkbox "Enable Overdraft Protection" [ref=e160] [cursor=pointer]
+          - checkbox
+          - generic [ref=e161] [cursor=pointer]: Enable Overdraft Protection
+      - generic [ref=e162]:
+        - button "Cancel" [ref=e163] [cursor=pointer]
+        - button "Save Account" [ref=e164] [cursor=pointer]
+    - button "Close" [ref=e165] [cursor=pointer]:
+      - img [ref=e166]
+      - generic [ref=e169]: Close
