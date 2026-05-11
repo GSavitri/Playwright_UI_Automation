@@ -1,0 +1,198 @@
+- generic:
+  - link:
+    - /url: "#main-content"
+    - text: Skip to content
+  - main:
+    - generic:
+      - generic:
+        - navigation:
+          - generic:
+            - generic:
+              - generic:
+                - img
+                - generic: SecureBank
+              - list:
+                - listitem:
+                  - link:
+                    - /url: /bank/dashboard
+                    - text: 📊 Dashboard
+                - listitem:
+                  - link:
+                    - /url: /bank/accounts
+                    - text: 💳 Accounts
+                - listitem:
+                  - link:
+                    - /url: /bank/transactions
+                    - text: 💸 Transactions
+              - generic:
+                - link:
+                  - /url: /docs/bank-demo
+                  - text: Help & Docs
+                - generic: 👤 admin
+                - button: Logout
+        - main:
+          - generic:
+            - generic:
+              - generic:
+                - text: "Search:"
+                - generic:
+                  - img
+                  - textbox:
+                    - /placeholder: Search by name or number
+              - generic:
+                - text: "Account Type:"
+                - combobox:
+                  - generic: All Types
+                  - img
+              - generic:
+                - text: "Sort By:"
+                - combobox:
+                  - generic: Account Name
+                  - img
+              - generic:
+                - button: Reset Filters
+          - generic:
+            - generic:
+              - heading [level=2]: Your Bank Accounts
+            - generic:
+              - generic:
+                - table:
+                  - rowgroup:
+                    - row:
+                      - columnheader: Account Number
+                      - columnheader:
+                        - text: Account Name
+                        - img
+                      - columnheader: Type
+                      - columnheader:
+                        - text: Balance
+                        - img
+                      - columnheader:
+                        - text: Status
+                        - img
+                      - columnheader: Actions
+                  - rowgroup:
+                    - row:
+                      - cell
+                      - cell
+                      - cell
+                      - cell
+                      - cell
+                      - cell
+                    - row:
+                      - cell
+                      - cell
+                      - cell
+                      - cell
+                      - cell
+                      - cell
+                    - row:
+                      - cell
+                      - cell
+                      - cell
+                      - cell
+                      - cell
+                      - cell
+                    - row:
+                      - cell
+                      - cell
+                      - cell
+                      - cell
+                      - cell
+                      - cell
+                    - row:
+                      - cell
+                      - cell
+                      - cell
+                      - cell
+                      - cell
+                      - cell
+          - generic:
+            - generic:
+              - img
+              - heading [level=2]: Accounts Page — Test Cases
+            - paragraph:
+              - text: Expand each test case to see step-by-step automation instructions for Selenium and Playwright. Looking for more inspiration? Read our
+              - link:
+                - /url: /blog/25-real-world-automation-test-cases-for-qa-engineers
+                - text: guide on 25 real-world automation test cases
+              - text: .
+            - generic:
+              - generic:
+                - heading [level=3]:
+                  - button:
+                    - generic:
+                      - generic: "TC-ACC-01:"
+                      - text: Create a new account using the 3-step Open Account wizard
+                    - img
+              - generic:
+                - heading [level=3]:
+                  - button:
+                    - generic:
+                      - generic: "TC-ACC-02:"
+                      - text: Edit account name inline by double-clicking the name cell
+                    - img
+              - generic:
+                - heading [level=3]:
+                  - button:
+                    - generic:
+                      - generic: "TC-ACC-03:"
+                      - text: Delete an account with confirmation and verify it is removed
+                    - img
+              - generic:
+                - heading [level=3]:
+                  - button:
+                    - generic:
+                      - generic: "TC-ACC-04:"
+                      - text: Filter accounts by account type
+                    - img
+              - generic:
+                - heading [level=3]:
+                  - button:
+                    - generic:
+                      - generic: "TC-ACC-05:"
+                      - text: Sort accounts by Balance column header (ascending → descending → none)
+                    - img
+  - region "Notifications alt+T"
+  - alert
+  - dialog "Add New Account" [ref=e2]:
+    - generic [ref=e3]:
+      - heading "Add New Account" [level=2] [ref=e4]
+      - paragraph [ref=e5]: Fill in the details to create a new account.
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - generic [ref=e8]:
+          - text: Account Name *
+          - textbox "Account Name *" [active] [ref=e9]:
+            - /placeholder: e.g., My Savings Account
+        - generic [ref=e10]:
+          - text: Account Type *
+          - combobox "Account Type *" [ref=e11] [cursor=pointer]:
+            - generic: Select account type
+            - img [ref=e12]
+          - combobox [ref=e14]
+        - generic [ref=e15]:
+          - text: Initial Balance *
+          - spinbutton "Initial Balance *" [ref=e16]
+        - generic [ref=e17]:
+          - text: Status
+          - radiogroup [ref=e18]:
+            - generic [ref=e19]:
+              - radio "Active" [checked] [ref=e20] [cursor=pointer]:
+                - img [ref=e22]
+              - radio [checked]
+              - generic [ref=e24] [cursor=pointer]: Active
+            - generic [ref=e25]:
+              - radio "Inactive" [ref=e26] [cursor=pointer]
+              - radio
+              - generic [ref=e27] [cursor=pointer]: Inactive
+        - generic [ref=e28]:
+          - checkbox "Enable Overdraft Protection" [ref=e29] [cursor=pointer]
+          - checkbox
+          - generic [ref=e30] [cursor=pointer]: Enable Overdraft Protection
+      - generic [ref=e31]:
+        - button "Cancel" [ref=e32] [cursor=pointer]
+        - button "Save Account" [ref=e33] [cursor=pointer]
+    - button "Close" [ref=e34] [cursor=pointer]:
+      - img [ref=e35]
+      - generic [ref=e38]: Close

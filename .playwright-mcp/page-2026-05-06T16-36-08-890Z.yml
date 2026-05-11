@@ -1,0 +1,171 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - main [ref=e3]:
+    - generic [ref=e132]:
+      - navigation "Bank navigation" [ref=e133]:
+        - generic [ref=e135]:
+          - generic [ref=e136]:
+            - img [ref=e137]
+            - generic [ref=e141]: SecureBank
+          - list [ref=e142]:
+            - listitem [ref=e143]:
+              - link "📊 Dashboard" [ref=e144] [cursor=pointer]:
+                - /url: /bank/dashboard
+            - listitem [ref=e145]:
+              - link "💳 Accounts" [ref=e146] [cursor=pointer]:
+                - /url: /bank/accounts
+            - listitem [ref=e147]:
+              - link "💸 Transactions" [ref=e148] [cursor=pointer]:
+                - /url: /bank/transactions
+          - generic [ref=e149]:
+            - link "Help & Docs" [ref=e150] [cursor=pointer]:
+              - /url: /docs/bank-demo
+            - generic [ref=e151]: 👤 admin
+            - button "Logout" [ref=e152] [cursor=pointer]
+      - main [ref=e153]:
+        - generic [ref=e154]:
+          - generic [ref=e155]:
+            - generic [ref=e156]: Total Balance
+            - generic [ref=e157]: $7,500.00
+          - generic [ref=e158]:
+            - generic [ref=e159]: Total Accounts
+            - generic [ref=e160]: "2"
+          - generic [ref=e161]:
+            - generic [ref=e162]: Active
+            - generic [ref=e163]: "2"
+          - generic [ref=e164]:
+            - generic [ref=e165]: Showing (filtered)
+            - generic [ref=e166]: "2"
+        - generic [ref=e168]:
+          - generic [ref=e169]:
+            - text: "Search:"
+            - generic [ref=e170]:
+              - img [ref=e171]
+              - textbox "Search:" [ref=e174]:
+                - /placeholder: Search by name or number
+          - generic [ref=e175]:
+            - text: "Account Type:"
+            - combobox "Account Type:" [ref=e176] [cursor=pointer]:
+              - generic: All Types
+              - img [ref=e177]
+          - generic [ref=e179]:
+            - text: "Sort By:"
+            - combobox "Sort By:" [ref=e180] [cursor=pointer]:
+              - generic: Account Name
+              - img [ref=e181]
+          - button "Reset Filters" [ref=e184] [cursor=pointer]
+        - generic [ref=e185]:
+          - heading "Your Bank Accounts" [level=2] [ref=e187]
+          - generic [ref=e188]:
+            - table [ref=e190]:
+              - rowgroup [ref=e191]:
+                - row "Account Number Account Name Type Balance Status Actions" [ref=e192]:
+                  - columnheader "Account Number" [ref=e193]
+                  - columnheader "Account Name" [ref=e194] [cursor=pointer]:
+                    - text: Account Name
+                    - img [ref=e195]
+                  - columnheader "Type" [ref=e198]
+                  - columnheader "Balance" [ref=e199] [cursor=pointer]:
+                    - text: Balance
+                    - img [ref=e200]
+                  - columnheader "Status" [ref=e203] [cursor=pointer]:
+                    - text: Status
+                    - img [ref=e204]
+                  - columnheader "Actions" [ref=e207]
+              - rowgroup [ref=e208]:
+                - row "1001234568 Checking Account Checking $2,500.00 Active Edit account Checking Account Delete account Checking Account" [ref=e209]:
+                  - cell "1001234568" [ref=e210]
+                  - cell "Checking Account" [ref=e211]:
+                    - link "Checking Account" [ref=e212] [cursor=pointer]:
+                      - /url: /bank/accounts/id_1778085359488_tdich23sd
+                  - cell "Checking" [ref=e213]:
+                    - generic [ref=e214]: Checking
+                  - cell "$2,500.00" [ref=e215]
+                  - cell "Active" [ref=e216]:
+                    - generic [ref=e217]: Active
+                  - cell "Edit account Checking Account Delete account Checking Account" [ref=e218]:
+                    - generic [ref=e219]:
+                      - button "Edit account Checking Account" [ref=e220] [cursor=pointer]:
+                        - img
+                        - text: Edit
+                      - button "Delete account Checking Account" [ref=e221] [cursor=pointer]:
+                        - img
+                        - text: Delete
+                - row "1001234567 Primary Savings Savings $5,000.00 Active Edit account Primary Savings Delete account Primary Savings" [ref=e222]:
+                  - cell "1001234567" [ref=e223]
+                  - cell "Primary Savings" [ref=e224]:
+                    - link "Primary Savings" [ref=e225] [cursor=pointer]:
+                      - /url: /bank/accounts/id_1778085359488_rwy2flftv
+                  - cell "Savings" [ref=e226]:
+                    - generic [ref=e227]: Savings
+                  - cell "$5,000.00" [ref=e228]
+                  - cell "Active" [ref=e229]:
+                    - generic [ref=e230]: Active
+                  - cell "Edit account Primary Savings Delete account Primary Savings" [ref=e231]:
+                    - generic [ref=e232]:
+                      - button "Edit account Primary Savings" [ref=e233] [cursor=pointer]:
+                        - img
+                        - text: Edit
+                      - button "Delete account Primary Savings" [ref=e234] [cursor=pointer]:
+                        - img
+                        - text: Delete
+            - generic [ref=e235]:
+              - generic [ref=e236]: Showing 1–2 of 2
+              - generic [ref=e237]:
+                - button "First page" [disabled]:
+                  - img
+                - button "Previous page" [disabled]:
+                  - img
+                - button "Page 1" [ref=e238] [cursor=pointer]: "1"
+                - button "Next page" [disabled]:
+                  - img
+                - button "Last page" [disabled]:
+                  - img
+              - generic [ref=e239]:
+                - generic [ref=e240]: Rows per page
+                - combobox "Rows per page" [ref=e241] [cursor=pointer]:
+                  - generic: "10"
+                  - img [ref=e242]
+        - generic [ref=e244]:
+          - generic [ref=e245]:
+            - img [ref=e246]
+            - heading "Accounts Page — Test Cases" [level=2] [ref=e249]
+          - paragraph [ref=e250]:
+            - text: Expand each test case to see step-by-step automation instructions for Selenium and Playwright. Looking for more inspiration? Read our
+            - link "guide on 25 real-world automation test cases" [ref=e251] [cursor=pointer]:
+              - /url: /blog/25-real-world-automation-test-cases-for-qa-engineers
+            - text: .
+          - generic [ref=e252]:
+            - heading "TC-ACC-01:Create a new account using the 3-step Open Account wizard" [level=3] [ref=e254]:
+              - button "TC-ACC-01:Create a new account using the 3-step Open Account wizard" [ref=e255] [cursor=pointer]:
+                - generic [ref=e256]:
+                  - generic [ref=e257]: "TC-ACC-01:"
+                  - text: Create a new account using the 3-step Open Account wizard
+                - img [ref=e258]
+            - heading "TC-ACC-02:Edit account name inline by double-clicking the name cell" [level=3] [ref=e261]:
+              - button "TC-ACC-02:Edit account name inline by double-clicking the name cell" [ref=e262] [cursor=pointer]:
+                - generic [ref=e263]:
+                  - generic [ref=e264]: "TC-ACC-02:"
+                  - text: Edit account name inline by double-clicking the name cell
+                - img [ref=e265]
+            - heading "TC-ACC-03:Delete an account with confirmation and verify it is removed" [level=3] [ref=e268]:
+              - button "TC-ACC-03:Delete an account with confirmation and verify it is removed" [ref=e269] [cursor=pointer]:
+                - generic [ref=e270]:
+                  - generic [ref=e271]: "TC-ACC-03:"
+                  - text: Delete an account with confirmation and verify it is removed
+                - img [ref=e272]
+            - heading "TC-ACC-04:Filter accounts by account type" [level=3] [ref=e275]:
+              - button "TC-ACC-04:Filter accounts by account type" [ref=e276] [cursor=pointer]:
+                - generic [ref=e277]:
+                  - generic [ref=e278]: "TC-ACC-04:"
+                  - text: Filter accounts by account type
+                - img [ref=e279]
+            - heading "TC-ACC-05:Sort accounts by Balance column header (ascending → descending → none)" [level=3] [ref=e282]:
+              - button "TC-ACC-05:Sort accounts by Balance column header (ascending → descending → none)" [ref=e283] [cursor=pointer]:
+                - generic [ref=e284]:
+                  - generic [ref=e285]: "TC-ACC-05:"
+                  - text: Sort accounts by Balance column header (ascending → descending → none)
+                - img [ref=e286]
+  - region "Notifications alt+T"
+  - alert [ref=e131]: Manage Accounts – Bank Demo E2E Practice | QA Playground
