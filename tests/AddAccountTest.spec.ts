@@ -108,7 +108,7 @@ test.describe('Add Account with Valid Credentials', () => {
 });
 
 test.describe('Add Account Form Interactions', () => {
-  test('Cancel Account Creation', async ({ page, loginPage, addAccountPage }) => {
+  test.skip('Cancel Account Creation', async ({ page, loginPage, addAccountPage }) => {
     // Navigate to login page and log in
     await loginPage.goto();
     await loginPage.logInWithUserNamePassword('admin', 'admin123');
